@@ -1,1 +1,342 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharma Investments Alerts</title>
+<style>
+:root{--bg:#080808;--s1:#111;--s2:#181818;--b1:#222;--b2:#2a2a2a;--b3:#333;--t1:#f0f0f0;--t2:#aaa;--t3:#666;--t4:#444;--g:#22c55e;--gbg:#071a0e;--gb:#0d3a1c;--y:#f59e0b;--ybg:#160f00;--yb:#3d2800;--r:#ef4444;--rbg:#150404;--rb:#3d0c0c;--mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;line-height:1.5;min-height:100vh}
+.page{max-width:860px;margin:0 auto;padding:20px 16px 40px}
+.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:8px}
+.hdr-left{display:flex;align-items:center;gap:10px}
+.logo{width:28px;height:28px;border-radius:6px;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000}
+.hdr h1{font-size:16px;font-weight:600;letter-spacing:-0.2px}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.ts{font-size:11px;color:var(--t3);font-family:var(--mono)}
+.rfbtn{background:var(--s2);border:1px solid var(--b2);color:var(--t3);padding:5px 11px;border-radius:5px;font-size:11px;cursor:pointer;transition:.15s}
+.rfbtn:hover{color:var(--t1);border-color:var(--b3)}
+.rfbtn:disabled{opacity:.5;cursor:default}
+.banner{border-radius:10px;padding:18px 20px;margin-bottom:20px;border:1px solid}
+.banner.G{background:var(--gbg);border-color:var(--gb)}
+.banner.H{background:var(--ybg);border-color:var(--yb)}
+.banner.S{background:var(--rbg);border-color:var(--rb)}
+.banner.L{background:var(--s1);border-color:var(--b1)}
+.b-top{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.b-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.b-dot.G{background:var(--g);animation:pulse 2s infinite}
+.b-dot.H{background:var(--y)}
+.b-dot.S{background:var(--r)}
+.b-dot.L{background:var(--t4)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.b-tag{font-size:10px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.b-tag.G{color:var(--g)}.b-tag.H{color:var(--y)}.b-tag.S{color:var(--r)}.b-tag.L{color:var(--t3)}
+.b-title{font-size:20px;font-weight:700;letter-spacing:-.4px;line-height:1.2;margin-bottom:3px}
+.b-title.G{color:var(--g)}.b-title.H{color:var(--y)}.b-title.S{color:var(--r)}.b-title.L{color:var(--t3)}
+.b-sub{font-size:12px;color:var(--t3)}
+.b-meta{font-family:var(--mono);font-size:11px;color:var(--t4);margin-top:10px;padding-top:10px;border-top:1px solid var(--b1)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+@media(max-width:560px){.metrics{grid-template-columns:1fr 1fr}}
+.met{background:var(--s1);border:1px solid var(--b1);border-radius:8px;padding:12px 14px}
+.met-lbl{font-size:10px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:5px}
+.met-val{font-size:20px;font-weight:700;font-family:var(--mono);letter-spacing:-.5px}
+.met-val.G{color:var(--g)}.met-val.H{color:var(--y)}.met-val.S{color:var(--r)}.met-val.N{color:var(--t1)}
+.met-note{font-size:10px;color:var(--t4);margin-top:3px}
+.met-bar{height:3px;border-radius:2px;margin-top:8px;background:var(--b2)}
+.met-bar-fill{height:100%;border-radius:2px;transition:width .5s}
+.sec-hdr{font-size:10px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--t4);margin-bottom:10px;margin-top:24px;padding-bottom:8px;border-bottom:1px solid var(--b1)}
+.chklist{background:var(--s1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;margin-bottom:20px}
+.chk{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--b1)}
+.chk:last-child{border-bottom:none}
+.chk-ind{width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.chk-ind.G{background:var(--gbg);border:1px solid var(--gb);color:var(--g)}
+.chk-ind.H{background:var(--ybg);border:1px solid var(--yb);color:var(--y)}
+.chk-ind.S{background:var(--rbg);border:1px solid var(--rb);color:var(--r)}
+.chk-ind.L{background:var(--s2);border:1px solid var(--b2);color:var(--t4)}
+.chk-info{flex:1;min-width:0}
+.chk-name{font-size:13px;font-weight:500;color:var(--t1)}
+.chk-detail{font-size:11px;color:var(--t3);margin-top:1px}
+.chk-val{font-family:var(--mono);font-size:13px;font-weight:600;flex-shrink:0}
+.chk-val.G{color:var(--g)}.chk-val.H{color:var(--y)}.chk-val.S{color:var(--r)}.chk-val.L{color:var(--t4)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+@media(max-width:540px){.two-col{grid-template-columns:1fr}}
+.panel{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:14px 16px}
+.panel-hdr{font-size:11px;font-weight:600;color:var(--t2);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.spills{display:flex;gap:5px;flex-wrap:wrap;min-height:28px;align-items:center;margin:8px 0}
+.spill{padding:3px 9px;border-radius:4px;font-size:11px;font-family:var(--mono);font-weight:700}
+.spill.W{background:var(--gbg);border:1px solid var(--gb);color:var(--g)}
+.spill.B{background:var(--ybg);border:1px solid var(--yb);color:var(--y)}
+.spill.L{background:var(--rbg);border:1px solid var(--rb);color:var(--r)}
+.sbtns{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sbtn{padding:5px 11px;border-radius:5px;font-size:11px;font-family:var(--mono);font-weight:700;cursor:pointer;border:1px solid;transition:.1s}
+.sbtn.W{background:var(--gbg);border-color:var(--gb);color:var(--g)}
+.sbtn.B{background:var(--ybg);border-color:var(--yb);color:var(--y)}
+.sbtn.L{background:var(--rbg);border-color:var(--rb);color:var(--r)}
+.sbtn.X{background:transparent;border-color:var(--b2);color:var(--t4)}
+.skalert{margin-top:10px;padding:8px 10px;border-radius:5px;font-size:11px;line-height:1.5;display:none}
+.skalert.stop{background:var(--rbg);border:1px solid var(--rb);color:var(--r);display:block}
+.skalert.half{background:var(--ybg);border:1px solid var(--yb);color:var(--y);display:block}
+.skalert.ok{background:var(--gbg);border:1px solid var(--gb);color:var(--g);display:block}
+.t-add{display:flex;gap:6px;margin-bottom:10px}
+.t-add input{flex:1;background:var(--s2);border:1px solid var(--b2);color:var(--t1);padding:7px 9px;border-radius:5px;font-size:12px;font-family:var(--mono);min-width:0}
+.t-add input::placeholder{color:var(--t4)}
+.t-add button{background:var(--s2);border:1px solid var(--b2);color:var(--t3);padding:7px 11px;border-radius:5px;font-size:11px;cursor:pointer;white-space:nowrap}
+.trade-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--b1)}
+.trade-row:last-child{border-bottom:none}
+.tr-tick{font-family:var(--mono);font-weight:700;font-size:13px;min-width:48px;color:var(--t1)}
+.tr-days{font-size:11px;flex:1}
+.tr-days.ok{color:var(--t3)}.tr-days.warn{color:var(--y);font-weight:600}.tr-days.exit{color:var(--r);font-weight:700}
+.tr-rm{color:var(--t4);cursor:pointer;font-size:15px;padding:0 2px}
+.tr-rm:hover{color:var(--r)}
+.empty{font-size:11px;color:var(--t4);font-style:italic;padding:4px 0}
+.rules{background:var(--s1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;margin-bottom:20px}
+.rule{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--b1);font-size:12px}
+.rule:last-child{border-bottom:none}
+.rule-n{font-family:var(--mono);font-size:10px;color:var(--t4);flex-shrink:0;padding-top:2px;min-width:18px}
+.rule-t{color:var(--t3);line-height:1.6}
+.rule-t b{color:var(--t1);font-weight:600}
+.spin{display:inline-block;width:11px;height:11px;border:2px solid var(--b2);border-top-color:var(--t3);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="hdr">
+  <div class="hdr-left">
+    <div class="logo">S</div>
+    <h1>Sharma Investments Alerts</h1>
+  </div>
+  <div class="hdr-right">
+    <span class="ts" id="ts">—</span>
+    <button class="rfbtn" id="rfbtn" onclick="load()">Refresh</button>
+  </div>
+</div>
+<div class="banner L" id="banner">
+  <div class="b-top">
+    <div class="b-dot L" id="bdot"></div>
+    <div class="b-tag L" id="btag">Loading market data...</div>
+  </div>
+  <div class="b-title L" id="btitle">—</div>
+  <div class="b-sub" id="bsub">Fetching VIX, SPY, breadth and regime data</div>
+  <div class="b-meta" id="bmeta"></div>
+</div>
+<div class="metrics">
+  <div class="met"><div class="met-lbl">VIX</div><div class="met-val L" id="m-vix">—</div><div class="met-note" id="m-vix-n">Fear gauge</div><div class="met-bar"><div class="met-bar-fill" id="m-vix-b" style="width:0%"></div></div></div>
+  <div class="met"><div class="met-lbl">SPY</div><div class="met-val N" id="m-spy">—</div><div class="met-note" id="m-spy-n">S&P 500 ETF</div><div class="met-bar"><div class="met-bar-fill" id="m-spy-b" style="width:50%"></div></div></div>
+  <div class="met"><div class="met-lbl">Breadth</div><div class="met-val L" id="m-br">—</div><div class="met-note" id="m-br-n">% above 50MA</div><div class="met-bar"><div class="met-bar-fill" id="m-br-b" style="width:0%"></div></div></div>
+  <div class="met"><div class="met-lbl">Regime</div><div class="met-val L" id="m-reg">—</div><div class="met-note" id="m-reg-n">Market mode</div><div class="met-bar"><div class="met-bar-fill" id="m-reg-b" style="width:0%"></div></div></div>
+</div>
+<div class="sec-hdr">Regime checklist — data-calibrated from your trading log</div>
+<div class="chklist">
+  <div class="chk"><div class="chk-ind L" id="ci1">?</div><div class="chk-info"><div class="chk-name">VIX level</div><div class="chk-detail" id="cd1">Full: below 20 | Half: 20–24 | Stop: above 24</div></div><div class="chk-val L" id="cv1">—</div></div>
+  <div class="chk"><div class="chk-ind L" id="ci2">?</div><div class="chk-info"><div class="chk-name">SPY vs 21-day EMA</div><div class="chk-detail" id="cd2">Must be above 21EMA — his calls fail when SPY breaks below</div></div><div class="chk-val L" id="cv2">—</div></div>
+  <div class="chk"><div class="chk-ind L" id="ci3">?</div><div class="chk-info"><div class="chk-name">SPY trend direction</div><div class="chk-detail" id="cd3">Higher highs and higher lows = uptrend = his bias is aligned</div></div><div class="chk-val L" id="cv3">—</div></div>
+  <div class="chk"><div class="chk-ind L" id="ci4">?</div><div class="chk-info"><div class="chk-name">Market breadth</div><div class="chk-detail" id="cd4">% of S&P 500 stocks above 50MA — target 60%+ for full size</div></div><div class="chk-val L" id="cv4">—</div></div>
+  <div class="chk"><div class="chk-ind L" id="ci5">?</div><div class="chk-info"><div class="chk-name">Dip-buying behavior</div><div class="chk-detail" id="cd5">Pullbacks recovered within 2–3 days = momentum regime active</div></div><div class="chk-val L" id="cv5">—</div></div>
+  <div class="chk"><div class="chk-ind L" id="ci6">?</div><div class="chk-info"><div class="chk-name">Weekly BE count</div><div class="chk-detail" id="cd6">0–1 BEs = normal | 2 BEs = half size | 3+ BEs = stop</div></div><div class="chk-val L" id="cv6">—</div></div>
+</div>
+<div class="two-col">
+  <div class="panel">
+    <div class="panel-hdr">
+      <span>Recent trade streak</span>
+      <span style="font-size:10px;color:var(--t4);font-family:var(--mono)" id="be-count">0 BEs this week</span>
+    </div>
+    <div style="font-size:11px;color:var(--t4);margin-bottom:4px">Log each result as he exits trades</div>
+    <div class="spills" id="spills"><span style="font-size:11px;color:var(--t4);font-style:italic">Nothing logged yet</span></div>
+    <div class="sbtns">
+      <button class="sbtn W" onclick="addS('W')">+ Win</button>
+      <button class="sbtn B" onclick="addS('B')">+ Break even</button>
+      <button class="sbtn L" onclick="addS('L')">+ Loss</button>
+      <button class="sbtn X" onclick="clearS()">Clear</button>
+    </div>
+    <div class="skalert" id="skalert"></div>
+  </div>
+  <div class="panel">
+    <div class="panel-hdr"><span>Open trades — 5-day rule</span></div>
+    <div style="font-size:11px;color:var(--t4);margin-bottom:8px">Exit anything not profitable by day 5. Every loss in your log was held 15+ days.</div>
+    <div class="t-add">
+      <input type="text" id="t-tick" placeholder="Ticker" maxlength="6">
+      <input type="date" id="t-date">
+      <button onclick="addT()">Add</button>
+    </div>
+    <div id="trades-list"><div class="empty">No open trades</div></div>
+  </div>
+</div>
+<div class="sec-hdr">Your trading rules — derived from log analysis</div>
+<div class="rules">
+  <div class="rule"><div class="rule-n">01</div><div class="rule-t"><b>VIX is your master switch.</b> Below 20 = full size. 20–24 = half size. Above 24 = full stop, no exceptions. Every major loss in your log happened when VIX was above 22.</div></div>
+  <div class="rule"><div class="rule-n">02</div><div class="rule-t"><b>Exit by day 5 no matter what.</b> 94% win rate on 1–3 day holds. 20% win rate on 15+ day holds. The -30%, -50%, -22%, -28% losses were all held 15–33 days.</div></div>
+  <div class="rule"><div class="rule-n">03</div><div class="rule-t"><b>Break evens are your early warning.</b> They pile up before losses appear every time. 2 BEs in a week = cut to half size immediately. 3 BEs or any loss = full stop.</div></div>
+  <div class="rule"><div class="rule-n">04</div><div class="rule-t"><b>Never size up in half or stop regime.</b> All 7 successful add-to-position trades happened in the green regime. Both blowups happened when he added in the bad regime.</div></div>
+  <div class="rule"><div class="rule-n">05</div><div class="rule-t"><b>Double entries are his confirmation system.</b> He enters same ticker twice in one day 13 times. Only follow the 2nd entry if the 1st entry is already showing a profit.</div></div>
+  <div class="rule"><div class="rule-n">06</div><div class="rule-t"><b>He is a 1–3 day swing trader.</b> 85% of winning trades resolved in 3 days or less. His options have long DTE for protection but the trade works fast or it doesn't work.</div></div>
+</div>
+</div>
+<script>
+var ANTHROPIC_KEY = 'PASTE_YOUR_KEY_HERE';
+let streak=JSON.parse(localStorage.getItem('bk_streak')||'[]');
+let trades=JSON.parse(localStorage.getItem('bk_trades')||'[]');
+let md={};
+let beThisWeek=parseInt(localStorage.getItem('bk_be_week')||'0');
+async function load(){
+  const btn=document.getElementById('rfbtn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span>';
+  document.getElementById('ts').textContent='Fetching...';
+  try{
+    const today=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':ANTHROPIC_KEY='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','anthropic-version':'2023-06-01'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:800,
+        tools:[{type:'web_search_20250305',name:'web_search'}],
+        system:'You are a market data assistant. Today is '+today+'. Search for current market data and respond with ONLY a valid JSON object, no markdown, no explanation, no backticks. Use this exact structure: {"vix":21.5,"spy_price":578.20,"spy_change_pct":-0.32,"spy_vs_21ema":"below","spy_trend":"downtrend","breadth_pct":38,"dip_buying":"weak","regime_word":"bearish","one_liner":"Choppy market, war uncertainty weighing on stocks"}',
+        messages:[{role:'user',content:'Search current VIX level, SPY price and percent change today, whether SPY is above or below its 21-day EMA, current market trend direction, and approximately what percentage of S&P 500 stocks are above their 50-day moving average. Return only the JSON.'}]
+      })
+    });
+    const data=await res.json();
+    const txt=(data.content||[]).filter(function(b){return b.type==='text'}).map(function(b){return b.text}).join('');
+    const match=txt.match(/\{[\s\S]*\}/);
+    if(!match)throw new Error('No JSON');
+    md=JSON.parse(match[0]);
+    render();
+  }catch(e){
+    console.error(e);
+    document.getElementById('ts').textContent='Error — try refreshing';
+    document.getElementById('btitle').textContent='Could not load market data';
+    document.getElementById('bsub').textContent='Check your connection and refresh';
+  }
+  btn.disabled=false;
+  btn.textContent='Refresh';
+}
+function render(){
+  var v=parseFloat(md.vix);
+  var br=parseFloat(md.breadth_pct);
+  var spyChg=parseFloat(md.spy_change_pct);
+  var vc=v<20?'G':v<24?'H':'S';
+  var sc=md.spy_vs_21ema==='above'?'G':md.spy_vs_21ema==='near'?'H':'S';
+  var tc=md.spy_trend==='uptrend'?'G':md.spy_trend==='downtrend'?'S':'H';
+  var bc=br>=60?'G':br>=40?'H':'S';
+  var dc=md.dip_buying==='strong'?'G':md.dip_buying==='moderate'?'H':'S';
+  var bec=beThisWeek<=1?'G':beThisWeek===2?'H':'S';
+  var checks=[vc,sc,tc,bc,dc,bec];
+  var greens=checks.filter(function(c){return c==='G'}).length;
+  var stops=checks.filter(function(c){return c==='S'}).length;
+  var sk=getStreakLevel();
+  var sig='S',sigTitle='Full stop — do not trade',sigSub='';
+  if(sk==='stop'||v>24||stops>=3||greens<=2){sig='S';sigTitle='Full stop — do not trade';sigSub=v>24?'VIX at '+v.toFixed(1)+' — above 24 hard stop':greens+'/6 checks green — regime not ready';}
+  else if(sk==='half'||greens>=4||(greens===3&&stops===0)){sig='H';sigTitle='Half size only';sigSub=greens+'/6 checks green — trade cautiously at reduced size';}
+  if(sk!=='stop'&&greens>=5&&v<20){sig='G';sigTitle='Go full size — conditions are green';sigSub=greens+'/6 checks green — clean momentum regime';}
+  var colorMap={G:['G','Active — full size','G'],H:['H','Caution — half size','H'],S:['S','Stopped','S']};
+  var cm=colorMap[sig];
+  document.getElementById('banner').className='banner '+sig;
+  document.getElementById('bdot').className='b-dot '+cm[2];
+  var btag=document.getElementById('btag');btag.className='b-tag '+cm[0];btag.textContent='Signal: '+cm[1];
+  var btitle=document.getElementById('btitle');btitle.className='b-title '+cm[0];btitle.textContent=sigTitle;
+  document.getElementById('bsub').textContent=sigSub||md.one_liner||'';
+  document.getElementById('bmeta').textContent='VIX '+v.toFixed(1)+' | SPY $'+parseFloat(md.spy_price).toFixed(0)+' ('+(spyChg>=0?'+':'')+spyChg.toFixed(2)+'%) | Breadth ~'+Math.round(br)+'% | '+md.spy_vs_21ema+' 21EMA';
+  document.getElementById('ts').textContent=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+  setMet('m-vix',v.toFixed(1),vc,v<20?'Calm — green zone':v<24?'Caution zone':'Danger zone',Math.min(v/40*100,100),vc);
+  setMet('m-spy','$'+parseFloat(md.spy_price).toFixed(0),spyChg>0?'G':spyChg<-0.5?'S':'H',(spyChg>=0?'+':'')+spyChg.toFixed(2)+'% today',50,spyChg>0?'G':'S');
+  setMet('m-br',Math.round(br)+'%',bc,bc==='G'?'Broad participation':bc==='H'?'Narrowing':'Poor breadth',br,bc);
+  setMet('m-reg',md.regime_word||'—',tc,md.one_liner||'',tc==='G'?80:tc==='H'?50:20,tc);
+  var chkData=[
+    [vc,v.toFixed(1),v<20?'Below 20 — full size ok':v<24?'In caution zone 20–24':'Above 24 — hard stop'],
+    [sc,md.spy_vs_21ema==='above'?'Above':'Below',md.spy_vs_21ema==='above'?'Above 21EMA — bullish alignment':'Below 21EMA — calls at risk'],
+    [tc,md.spy_trend,md.spy_trend==='uptrend'?'Higher highs & lows — momentum':'No clean uptrend'],
+    [bc,Math.round(br)+'%',br>=60?'Broad — most stocks participating':br>=40?'Narrowing breadth':'Poor — fragile rally'],
+    [dc,md.dip_buying,md.dip_buying==='strong'?'Dips bought fast — momentum active':'Dips not recovering well'],
+    [bec,beThisWeek+' BE'+(beThisWeek!==1?'s':'')+' this wk',beThisWeek<=1?'Normal — stay current size':beThisWeek===2?'2 BEs — cut to half size':'3+ BEs — full stop trigger']
+  ];
+  var sym={G:'✓',H:'~',S:'✗',L:'?'};
+  chkData.forEach(function(row,i){
+    var n=i+1;
+    var ci=document.getElementById('ci'+n);ci.className='chk-ind '+row[0];ci.textContent=sym[row[0]]||'?';
+    var cv=document.getElementById('cv'+n);cv.className='chk-val '+row[0];cv.textContent=row[1];
+    document.getElementById('cd'+n).textContent=row[2];
+  });
+}
+function setMet(id,val,colorCls,note,barPct,barColor){
+  var el=document.getElementById(id);el.textContent=val;el.className='met-val '+colorCls;
+  document.getElementById(id+'-n').textContent=note;
+  var barColors={G:'#22c55e',H:'#f59e0b',S:'#ef4444',N:'#444'};
+  var fill=document.getElementById(id+'-b');
+  if(!fill)return;
+  fill.style.width=Math.max(0,Math.min(100,barPct))+'%';
+  fill.style.background=barColors[barColor]||'#444';
+}
+function addS(t){
+  streak.push(t);
+  if(streak.length>10)streak=streak.slice(-10);
+  if(t==='B'){beThisWeek++;localStorage.setItem('bk_be_week',beThisWeek);}
+  localStorage.setItem('bk_streak',JSON.stringify(streak));
+  renderStreak();
+  if(md.vix)render();
+}
+function clearS(){
+  streak=[];beThisWeek=0;
+  localStorage.setItem('bk_streak','[]');
+  localStorage.setItem('bk_be_week','0');
+  renderStreak();
+  if(md.vix)render();
+}
+function getStreakLevel(){
+  if(streak.length<2)return 'ok';
+  var l2=streak.slice(-2),l3=streak.slice(-3);
+  var losses=l2.filter(function(t){return t==='L'}).length;
+  var nonwins3=l3.filter(function(t){return t!=='W'}).length;
+  var nonwins2=l2.filter(function(t){return t!=='W'}).length;
+  if(losses>=1)return 'stop';
+  if(l3.length===3&&nonwins3>=3)return 'stop';
+  if(l2.length===2&&nonwins2>=2)return 'half';
+  return 'ok';
+}
+function renderStreak(){
+  var c=document.getElementById('spills');
+  document.getElementById('be-count').textContent=beThisWeek+' BE'+(beThisWeek!==1?'s':'')+' this week';
+  if(!streak.length){c.innerHTML='<span style="font-size:11px;color:var(--t4);font-style:italic">Nothing logged yet</span>';document.getElementById('skalert').className='skalert';return;}
+  c.innerHTML=streak.map(function(t){return '<span class="spill '+t+'">'+(t==='W'?'WIN':t==='L'?'LOSS':'BE')+'</span>'}).join('');
+  var lv=getStreakLevel();
+  var msgs={stop:'FULL STOP — loss or 3 consecutive non-wins. Do not take next trade.',half:'CUT TO HALF SIZE — 2 break evens in a row. Signal weakening.',ok:streak.length>=3?'Streak clean — maintain sizing per market conditions.':''};
+  var a=document.getElementById('skalert');
+  a.textContent=msgs[lv]||'';
+  a.className='skalert '+(lv==='ok'&&streak.length<3?'':lv);
+}
+function addT(){
+  var tick=document.getElementById('t-tick').value.trim().toUpperCase();
+  var date=document.getElementById('t-date').value;
+  if(!tick||!date)return;
+  trades.push({tick:tick,date:date,id:Date.now()});
+  localStorage.setItem('bk_trades',JSON.stringify(trades));
+  document.getElementById('t-tick').value='';
+  renderTrades();
+}
+function rmT(id){
+  trades=trades.filter(function(t){return t.id!==id});
+  localStorage.setItem('bk_trades',JSON.stringify(trades));
+  renderTrades();
+}
+function renderTrades(){
+  var c=document.getElementById('trades-list');
+  if(!trades.length){c.innerHTML='<div class="empty">No open trades</div>';return;}
+  var today=new Date();
+  c.innerHTML=trades.map(function(t){
+    var entry=new Date(t.date+'T12:00:00');
+    var cal=Math.floor((today-entry)/86400000);
+    var td=Math.round(cal*5/7);
+    var cls=td>=5?'exit':td>=3?'warn':'ok';
+    var lbl=td>=5?'Day '+td+' — EXIT NOW (5-day rule)':td>=3?'Day '+td+' — monitor closely':'Day '+td+' of 5';
+    return '<div class="trade-row"><div class="tr-tick">'+t.tick+'</div><div class="tr-days '+cls+'">'+lbl+'</div><div class="tr-rm" onclick="rmT('+t.id+')">×</div></div>';
+  }).join('');
+}
+renderStreak();
+renderTrades();
+document.getElementById('t-date').valueAsDate=new Date();
+load();
+setInterval(load,5*60*1000);
+</script>
+</body>
+</html>
