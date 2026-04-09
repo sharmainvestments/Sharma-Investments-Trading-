@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blake Signal</title>
+<title>Sharma Investments Alerts</title>
 <style>
 :root {
   --bg:#080808; --s1:#111; --s2:#181818; --s3:#1e1e1e;
@@ -17,8 +16,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;line-height:1.5;min-height:100vh}
 .page{max-width:860px;margin:0 auto;padding:20px 16px 40px}
-
-/* HEADER */
 .hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:8px}
 .hdr-left{display:flex;align-items:center;gap:10px}
 .logo{width:28px;height:28px;border-radius:6px;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000}
@@ -28,8 +25,6 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
 .rfbtn{background:var(--s2);border:1px solid var(--b2);color:var(--t3);padding:5px 11px;border-radius:5px;font-size:11px;cursor:pointer;transition:.15s}
 .rfbtn:hover{color:var(--t1);border-color:var(--b3)}
 .rfbtn:disabled{opacity:.5;cursor:default}
-
-/* SIGNAL BANNER */
 .banner{border-radius:10px;padding:18px 20px;margin-bottom:20px;border:1px solid;position:relative;overflow:hidden}
 .banner.G{background:var(--gbg);border-color:var(--gb)}
 .banner.H{background:var(--ybg);border-color:var(--yb)}
@@ -48,8 +43,6 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
 .b-title.G{color:var(--g)}.b-title.H{color:var(--y)}.b-title.S{color:var(--r)}.b-title.L{color:var(--t3)}
 .b-sub{font-size:12px;color:var(--t3)}
 .b-meta{font-family:var(--mono);font-size:11px;color:var(--t4);margin-top:10px;padding-top:10px;border-top:1px solid var(--b1)}
-
-/* METRICS ROW */
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
 @media(max-width:560px){.metrics{grid-template-columns:1fr 1fr}}
 .met{background:var(--s1);border:1px solid var(--b1);border-radius:8px;padding:12px 14px}
@@ -59,8 +52,6 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
 .met-note{font-size:10px;color:var(--t4);margin-top:3px}
 .met-bar{height:3px;border-radius:2px;margin-top:8px;background:var(--b2)}
 .met-bar-fill{height:100%;border-radius:2px;transition:width .5s}
-
-/* CHECKLIST */
 .sec-hdr{font-size:10px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--t4);margin-bottom:10px;margin-top:24px;padding-bottom:8px;border-bottom:1px solid var(--b1)}
 .chklist{background:var(--s1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;margin-bottom:20px}
 .chk{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--b1)}
@@ -75,14 +66,10 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
 .chk-detail{font-size:11px;color:var(--t3);margin-top:1px}
 .chk-val{font-family:var(--mono);font-size:13px;font-weight:600;flex-shrink:0}
 .chk-val.G{color:var(--g)}.chk-val.H{color:var(--y)}.chk-val.S{color:var(--r)}.chk-val.L{color:var(--t4)}
-
-/* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
 @media(max-width:540px){.two-col{grid-template-columns:1fr}}
 .panel{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:14px 16px}
 .panel-hdr{font-size:11px;font-weight:600;color:var(--t2);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
-
-/* STREAK */
 .spills{display:flex;gap:5px;flex-wrap:wrap;min-height:28px;align-items:center;margin:8px 0}
 .spill{padding:3px 9px;border-radius:4px;font-size:11px;font-family:var(--mono);font-weight:700}
 .spill.W{background:var(--gbg);border:1px solid var(--gb);color:var(--g)}
@@ -98,8 +85,6 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
 .skalert.stop{background:var(--rbg);border:1px solid var(--rb);color:var(--r);display:block}
 .skalert.half{background:var(--ybg);border:1px solid var(--yb);color:var(--y);display:block}
 .skalert.ok{background:var(--gbg);border:1px solid var(--gb);color:var(--g);display:block}
-
-/* TRADES */
 .t-add{display:flex;gap:6px;margin-bottom:10px}
 .t-add input{flex:1;background:var(--s2);border:1px solid var(--b2);color:var(--t1);padding:7px 9px;border-radius:5px;font-size:12px;font-family:var(--mono);min-width:0}
 .t-add input::placeholder{color:var(--t4)}
@@ -115,35 +100,28 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
 .tr-rm{color:var(--t4);cursor:pointer;font-size:15px;padding:0 2px}
 .tr-rm:hover{color:var(--r)}
 .empty{font-size:11px;color:var(--t4);font-style:italic;padding:4px 0}
-
-/* RULES */
 .rules{background:var(--s1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;margin-bottom:20px}
 .rule{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--b1);font-size:12px}
 .rule:last-child{border-bottom:none}
 .rule-n{font-family:var(--mono);font-size:10px;color:var(--t4);flex-shrink:0;padding-top:2px;min-width:18px}
 .rule-t{color:var(--t3);line-height:1.6}
 .rule-t b{color:var(--t1);font-weight:600}
-
-/* LOADING */
 .spin{display:inline-block;width:11px;height:11px;border:2px solid var(--b2);border-top-color:var(--t3);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <div class="page">
-
 <div class="hdr">
   <div class="hdr-left">
-    <div class="logo">B</div>
-    <h1>Blake Signal Dashboard</h1>
+    <div class="logo">S</div>
+    <h1>Sharma Investments Alerts</h1>
   </div>
   <div class="hdr-right">
     <span class="ts" id="ts">—</span>
     <button class="rfbtn" id="rfbtn" onclick="load()">Refresh</button>
   </div>
 </div>
-
-<!-- BANNER -->
 <div class="banner L" id="banner">
   <div class="b-top">
     <div class="b-dot L" id="bdot"></div>
@@ -153,16 +131,12 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
   <div class="b-sub" id="bsub">Fetching VIX, SPY, breadth and regime data</div>
   <div class="b-meta" id="bmeta"></div>
 </div>
-
-<!-- METRICS -->
 <div class="metrics">
   <div class="met"><div class="met-lbl">VIX</div><div class="met-val L" id="m-vix">—</div><div class="met-note" id="m-vix-n">Fear gauge</div><div class="met-bar"><div class="met-bar-fill" id="m-vix-b" style="width:0%"></div></div></div>
   <div class="met"><div class="met-lbl">SPY</div><div class="met-val N" id="m-spy">—</div><div class="met-note" id="m-spy-n">S&P 500 ETF</div><div class="met-bar"><div class="met-bar-fill" id="m-spy-b" style="width:50%"></div></div></div>
   <div class="met"><div class="met-lbl">Breadth</div><div class="met-val L" id="m-br">—</div><div class="met-note" id="m-br-n">% above 50MA</div><div class="met-bar"><div class="met-bar-fill" id="m-br-b" style="width:0%"></div></div></div>
   <div class="met"><div class="met-lbl">Regime</div><div class="met-val L" id="m-reg">—</div><div class="met-note" id="m-reg-n">Market mode</div><div class="met-bar"><div class="met-bar-fill" id="m-reg-b" style="width:0%"></div></div></div>
 </div>
-
-<!-- CHECKLIST -->
 <div class="sec-hdr">Regime checklist — data-calibrated from your trading log</div>
 <div class="chklist">
   <div class="chk"><div class="chk-ind L" id="ci1">?</div><div class="chk-info"><div class="chk-name">VIX level</div><div class="chk-detail" id="cd1">Full: below 20 | Half: 20–24 | Stop: above 24</div></div><div class="chk-val L" id="cv1">—</div></div>
@@ -170,14 +144,12 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
   <div class="chk"><div class="chk-ind L" id="ci3">?</div><div class="chk-info"><div class="chk-name">SPY trend direction</div><div class="chk-detail" id="cd3">Higher highs and higher lows = uptrend = his bias is aligned</div></div><div class="chk-val L" id="cv3">—</div></div>
   <div class="chk"><div class="chk-ind L" id="ci4">?</div><div class="chk-info"><div class="chk-name">Market breadth</div><div class="chk-detail" id="cd4">% of S&P 500 stocks above 50MA — target 60%+ for full size</div></div><div class="chk-val L" id="cv4">—</div></div>
   <div class="chk"><div class="chk-ind L" id="ci5">?</div><div class="chk-info"><div class="chk-name">Dip-buying behavior</div><div class="chk-detail" id="cd5">Pullbacks recovered within 2–3 days = momentum regime active</div></div><div class="chk-val L" id="cv5">—</div></div>
-  <div class="chk"><div class="chk-ind L" id="ci6">?</div><div class="chk-info"><div class="chk-name">Weekly BE count</div><div class="chk-detail" id="cd6">0–1 BEs = normal | 2 BEs = half size | 3+ BEs = stop</div></div><div class="chk-val L" id="cv6" id="cv6">—</div></div>
+  <div class="chk"><div class="chk-ind L" id="ci6">?</div><div class="chk-info"><div class="chk-name">Weekly BE count</div><div class="chk-detail" id="cd6">0–1 BEs = normal | 2 BEs = half size | 3+ BEs = stop</div></div><div class="chk-val L" id="cv6">—</div></div>
 </div>
-
-<!-- STREAK + TRADES -->
 <div class="two-col">
   <div class="panel">
     <div class="panel-hdr">
-      <span>Blake's recent streak</span>
+      <span>Recent trade streak</span>
       <span style="font-size:10px;color:var(--t4);font-family:var(--mono)" id="be-count">0 BEs this week</span>
     </div>
     <div style="font-size:11px;color:var(--t4);margin-bottom:4px">Log each result as he exits trades</div>
@@ -190,7 +162,6 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
     </div>
     <div class="skalert" id="skalert"></div>
   </div>
-
   <div class="panel">
     <div class="panel-hdr"><span>Open trades — 5-day rule</span></div>
     <div style="font-size:11px;color:var(--t4);margin-bottom:8px">Exit anything not profitable by day 5. Every loss in your log was held 15+ days.</div>
@@ -202,8 +173,6 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
     <div id="trades-list"><div class="empty">No open trades</div></div>
   </div>
 </div>
-
-<!-- RULES -->
 <div class="sec-hdr">Your trading rules — derived from log analysis</div>
 <div class="rules">
   <div class="rule"><div class="rule-n">01</div><div class="rule-t"><b>VIX is your master switch.</b> Below 20 = full size. 20–24 = half size. Above 24 = full stop, no exceptions. Every major loss in your log happened when VIX was above 22.</div></div>
@@ -213,186 +182,152 @@ body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSyst
   <div class="rule"><div class="rule-n">05</div><div class="rule-t"><b>Double entries are his confirmation system.</b> He enters same ticker twice in one day 13 times. Only follow the 2nd entry if the 1st entry is already showing a profit.</div></div>
   <div class="rule"><div class="rule-n">06</div><div class="rule-t"><b>He is a 1–3 day swing trader.</b> 85% of winning trades resolved in 3 days or less. His options have long DTE for protection but the trade works fast or it doesn't work.</div></div>
 </div>
-
-</div><!-- end page -->
-
+</div>
 <script>
-// ── STATE ──────────────────────────────────────────
-let streak = JSON.parse(localStorage.getItem('bk_streak')||'[]');
-let trades = JSON.parse(localStorage.getItem('bk_trades')||'[]');
-let md = {};
-let beThisWeek = parseInt(localStorage.getItem('bk_be_week')||'0');
-
-// ── MARKET DATA ────────────────────────────────────
-async function load() {
-  const btn = document.getElementById('rfbtn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spin"></span>';
-  document.getElementById('ts').textContent = 'Fetching...';
-
-  try {
-    const today = new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-    const res = await fetch('https://api.anthropic.com/v1/messages',{
+let streak=JSON.parse(localStorage.getItem('bk_streak')||'[]');
+let trades=JSON.parse(localStorage.getItem('bk_trades')||'[]');
+let md={};
+let beThisWeek=parseInt(localStorage.getItem('bk_be_week')||'0');
+async function load(){
+  const btn=document.getElementById('rfbtn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span>';
+  document.getElementById('ts').textContent='Fetching...';
+  try{
+    const today=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
+      headers:{'Content-Type':'application/json','x-api-key':'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','anthropic-version':'2023-06-01'},
+      body:JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens:800,
         tools:[{type:'web_search_20250305',name:'web_search'}],
-        system:`You are a market data assistant. Today is ${today}. Search for current market data and respond with ONLY a valid JSON object — no markdown, no explanation, no backticks. Use this exact structure:
-{"vix":<number>,"spy_price":<number>,"spy_change_pct":<number>,"spy_vs_21ema":<"above"|"below"|"near">,"spy_trend":<"uptrend"|"downtrend"|"sideways">,"breadth_pct":<number, % of S&P500 stocks above their 50-day MA>,"dip_buying":<"strong"|"moderate"|"weak">,"regime_word":<"momentum"|"choppy"|"bearish">,"one_liner":<string, max 10 words describing current market>}`,
-        messages:[{role:'user',content:'Search for current VIX level, SPY price and change today, whether SPY is above or below its 21-day EMA, current market trend direction, and approximately what percentage of S&P 500 stocks are above their 50-day moving average. Return only the JSON.'}]
+        system:`You are a market data assistant. Today is ${today}. Search for current market data and respond with ONLY a valid JSON object — no markdown, no explanation, no backticks. Use this exact structure: {"vix":<number>,"spy_price":<number>,"spy_change_pct":<number>,"spy_vs_21ema":<"above"|"below"|"near">,"spy_trend":<"uptrend"|"downtrend"|"sideways">,"breadth_pct":<number>,"dip_buying":<"strong"|"moderate"|"weak">,"regime_word":<"momentum"|"choppy"|"bearish">,"one_liner":<string max 10 words>}`,
+        messages:[{role:'user',content:'Search current VIX, SPY price and change, SPY vs 21EMA, trend direction, % of S&P500 stocks above 50MA. Return only the JSON.'}]
       })
     });
-    const data = await res.json();
-    const txt = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
-    const match = txt.match(/\{[\s\S]*\}/);
-    if(!match) throw new Error('No JSON');
-    md = JSON.parse(match[0]);
+    const data=await res.json();
+    const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+    const match=txt.match(/\{[\s\S]*\}/);
+    if(!match)throw new Error('No JSON');
+    md=JSON.parse(match[0]);
     render();
-  } catch(e) {
+  }catch(e){
     console.error(e);
-    document.getElementById('ts').textContent = 'Error — try refreshing';
-    document.getElementById('btitle').textContent = 'Could not load market data';
-    document.getElementById('bsub').textContent = 'Check your connection and refresh';
+    document.getElementById('ts').textContent='Error — try refreshing';
+    document.getElementById('btitle').textContent='Could not load market data';
+    document.getElementById('bsub').textContent='Check your connection and refresh';
   }
-  btn.disabled = false;
-  btn.textContent = 'Refresh';
+  btn.disabled=false;
+  btn.textContent='Refresh';
 }
-
-function render() {
-  const v = parseFloat(md.vix);
-  const br = parseFloat(md.breadth_pct);
-  const spyChg = parseFloat(md.spy_change_pct);
-
-  // color helpers
-  const vc = v < 20 ? 'G' : v < 24 ? 'H' : 'S';
-  const sc = md.spy_vs_21ema==='above' ? 'G' : md.spy_vs_21ema==='near' ? 'H' : 'S';
-  const tc = md.spy_trend==='uptrend' ? 'G' : md.spy_trend==='downtrend' ? 'S' : 'H';
-  const bc = br>=60 ? 'G' : br>=40 ? 'H' : 'S';
-  const dc = md.dip_buying==='strong' ? 'G' : md.dip_buying==='moderate' ? 'H' : 'S';
-  const bec = beThisWeek===0 ? 'G' : beThisWeek<=1 ? 'G' : beThisWeek===2 ? 'H' : 'S';
-
-  const checks = [vc,sc,tc,bc,dc,bec];
-  const greens = checks.filter(c=>c==='G').length;
-  const stops = checks.filter(c=>c==='S').length;
-
-  // streak override
-  const sk = getStreakLevel();
-
-  // final signal
-  let sig = 'S', sigTitle = 'Full stop — do not trade', sigSub = '';
-  if (sk==='stop' || v>24 || stops>=3 || greens<=2) {
-    sig='S'; sigTitle='Full stop — do not trade';
-    sigSub = v>24 ? `VIX at ${v.toFixed(1)} — above 24 hard stop` : `${greens}/6 checks green — regime not ready`;
-  } else if (sk==='half' || greens>=4 || (greens===3 && stops===0)) {
-    sig='H'; sigTitle='Half size only';
-    sigSub = `${greens}/6 checks green — trade cautiously at reduced size`;
-  }
-  if (sk!=='stop' && greens>=5 && v<20) {
-    sig='G'; sigTitle='Go full size on Blake\'s trades';
-    sigSub = `${greens}/6 checks green — clean momentum regime`;
-  }
-
-  // render banner
-  const colorMap = {G:['G','Active — full size','G'],H:['H','Caution — half size','H'],S:['S','Stopped','S']};
-  const [dc2,tagTxt,dotC] = colorMap[sig];
+function render(){
+  const v=parseFloat(md.vix);
+  const br=parseFloat(md.breadth_pct);
+  const spyChg=parseFloat(md.spy_change_pct);
+  const vc=v<20?'G':v<24?'H':'S';
+  const sc=md.spy_vs_21ema==='above'?'G':md.spy_vs_21ema==='near'?'H':'S';
+  const tc=md.spy_trend==='uptrend'?'G':md.spy_trend==='downtrend'?'S':'H';
+  const bc=br>=60?'G':br>=40?'H':'S';
+  const dc=md.dip_buying==='strong'?'G':md.dip_buying==='moderate'?'H':'S';
+  const bec=beThisWeek<=1?'G':beThisWeek===2?'H':'S';
+  const checks=[vc,sc,tc,bc,dc,bec];
+  const greens=checks.filter(c=>c==='G').length;
+  const stops=checks.filter(c=>c==='S').length;
+  const sk=getStreakLevel();
+  let sig='S',sigTitle='Full stop — do not trade',sigSub='';
+  if(sk==='stop'||v>24||stops>=3||greens<=2){sig='S';sigTitle='Full stop — do not trade';sigSub=v>24?`VIX at ${v.toFixed(1)} — above 24 hard stop`:`${greens}/6 checks green — regime not ready`;}
+  else if(sk==='half'||greens>=4||(greens===3&&stops===0)){sig='H';sigTitle='Half size only';sigSub=`${greens}/6 checks green — trade cautiously at reduced size`;}
+  if(sk!=='stop'&&greens>=5&&v<20){sig='G';sigTitle='Go full size — conditions are green';sigSub=`${greens}/6 checks green — clean momentum regime`;}
+  const colorMap={G:['G','Active — full size','G'],H:['H','Caution — half size','H'],S:['S','Stopped','S']};
+  const[dc2,tagTxt,dotC]=colorMap[sig];
   set('banner','className',`banner ${sig}`);
   set('bdot','className',`b-dot ${dotC}`);
-  set('btag','className',`b-tag ${dc2}`); el('btag').textContent = `Signal: ${tagTxt}`;
-  set('btitle','className',`b-title ${dc2}`); el('btitle').textContent = sigTitle;
-  el('bsub').textContent = sigSub || md.one_liner || '';
-  el('bmeta').textContent = `VIX ${v.toFixed(1)} | SPY $${parseFloat(md.spy_price).toFixed(0)} (${spyChg>=0?'+':''}${spyChg.toFixed(2)}%) | Breadth ~${Math.round(br)}% | ${md.spy_vs_21ema} 21EMA`;
-  el('ts').textContent = new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
-
-  // metrics
-  setMet('m-vix', v.toFixed(1), vc, v<20?'Calm — green zone':v<24?'Caution zone':'Danger zone', Math.min(v/40*100,100), vc);
-  setMet('m-spy', `$${parseFloat(md.spy_price).toFixed(0)}`, spyChg>0?'G':spyChg<-0.5?'S':'H', `${spyChg>=0?'+':''}${spyChg.toFixed(2)}% today`, 50, spyChg>0?'G':'S');
-  setMet('m-br', `${Math.round(br)}%`, bc, bc==='G'?'Broad participation':bc==='H'?'Narrowing':'Poor breadth', br, bc);
-  setMet('m-reg', md.regime_word||'—', tc, md.one_liner||'', tc==='G'?80:tc==='H'?50:20, tc);
-
-  // checklist
-  const chkData = [
-    [vc, v.toFixed(1), v<20?'Below 20 — full size ok':v<24?'In caution zone 20–24':'Above 24 — hard stop'],
-    [sc, md.spy_vs_21ema==='above'?'Above':'Below', md.spy_vs_21ema==='above'?'Above 21EMA — bullish alignment':'Below 21EMA — calls at risk'],
-    [tc, md.spy_trend, md.spy_trend==='uptrend'?'Higher highs & lows — momentum':'No clean uptrend'],
-    [bc, `${Math.round(br)}%`, br>=60?'Broad — most stocks participating':br>=40?'Narrowing breadth':'Poor — fragile rally'],
-    [dc, md.dip_buying, md.dip_buying==='strong'?'Dips bought fast — momentum active':'Dips not recovering well'],
-    [bec, `${beThisWeek} BE${beThisWeek!==1?'s':''} this wk`, beThisWeek<=1?'Normal — stay current size':beThisWeek===2?'2 BEs — cut to half size':'3+ BEs — full stop trigger'],
+  set('btag','className',`b-tag ${dc2}`);el('btag').textContent=`Signal: ${tagTxt}`;
+  set('btitle','className',`b-title ${dc2}`);el('btitle').textContent=sigTitle;
+  el('bsub').textContent=sigSub||md.one_liner||'';
+  el('bmeta').textContent=`VIX ${v.toFixed(1)} | SPY $${parseFloat(md.spy_price).toFixed(0)} (${spyChg>=0?'+':''}${spyChg.toFixed(2)}%) | Breadth ~${Math.round(br)}% | ${md.spy_vs_21ema} 21EMA`;
+  el('ts').textContent=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+  setMet('m-vix',v.toFixed(1),vc,v<20?'Calm — green zone':v<24?'Caution zone':'Danger zone',Math.min(v/40*100,100),vc);
+  setMet('m-spy',`$${parseFloat(md.spy_price).toFixed(0)}`,spyChg>0?'G':spyChg<-0.5?'S':'H',`${spyChg>=0?'+':''}${spyChg.toFixed(2)}% today`,50,spyChg>0?'G':'S');
+  setMet('m-br',`${Math.round(br)}%`,bc,bc==='G'?'Broad participation':bc==='H'?'Narrowing':'Poor breadth',br,bc);
+  setMet('m-reg',md.regime_word||'—',tc,md.one_liner||'',tc==='G'?80:tc==='H'?50:20,tc);
+  const chkData=[
+    [vc,v.toFixed(1),v<20?'Below 20 — full size ok':v<24?'In caution zone 20–24':'Above 24 — hard stop'],
+    [sc,md.spy_vs_21ema==='above'?'Above':'Below',md.spy_vs_21ema==='above'?'Above 21EMA — bullish alignment':'Below 21EMA — calls at risk'],
+    [tc,md.spy_trend,md.spy_trend==='uptrend'?'Higher highs & lows — momentum':'No clean uptrend'],
+    [bc,`${Math.round(br)}%`,br>=60?'Broad — most stocks participating':br>=40?'Narrowing breadth':'Poor — fragile rally'],
+    [dc,md.dip_buying,md.dip_buying==='strong'?'Dips bought fast — momentum active':'Dips not recovering well'],
+    [bec,`${beThisWeek} BE${beThisWeek!==1?'s':''} this wk`,beThisWeek<=1?'Normal — stay current size':beThisWeek===2?'2 BEs — cut to half size':'3+ BEs — full stop trigger'],
   ];
-  const sym = {G:'✓',H:'~',S:'✗',L:'?'};
+  const sym={G:'✓',H:'~',S:'✗',L:'?'};
   chkData.forEach(([c,val,detail],i)=>{
     const n=i+1;
-    el(`ci${n}`).className=`chk-ind ${c}`; el(`ci${n}`).textContent=sym[c]||'?';
-    el(`cv${n}`).className=`chk-val ${c}`; el(`cv${n}`).textContent=val;
+    el(`ci${n}`).className=`chk-ind ${c}`;el(`ci${n}`).textContent=sym[c]||'?';
+    el(`cv${n}`).className=`chk-val ${c}`;el(`cv${n}`).textContent=val;
     el(`cd${n}`).textContent=detail;
   });
 }
-
-function setMet(id, val, colorCls, note, barPct, barColor) {
-  el(id).textContent=val; el(id).className=`met-val ${colorCls}`;
+function setMet(id,val,colorCls,note,barPct,barColor){
+  el(id).textContent=val;el(id).className=`met-val ${colorCls}`;
   el(id+'-n').textContent=note;
   const barColors={G:'#22c55e',H:'#f59e0b',S:'#ef4444',N:'#444'};
-  const fill = el(id.replace('m-','m-')+'-b') || document.getElementById(id.replace(/^m-/,'m-')+'-b');
-  if(!fill) return;
+  const fill=document.getElementById(id+'-b');
+  if(!fill)return;
   fill.style.width=Math.max(0,Math.min(100,barPct))+'%';
   fill.style.background=barColors[barColor]||'#444';
 }
-
-// ── STREAK ─────────────────────────────────────────
-function addS(t) {
+function addS(t){
   streak.push(t);
-  if(streak.length>10) streak=streak.slice(-10);
-  if(t==='B') { beThisWeek++; localStorage.setItem('bk_be_week',beThisWeek); }
+  if(streak.length>10)streak=streak.slice(-10);
+  if(t==='B'){beThisWeek++;localStorage.setItem('bk_be_week',beThisWeek);}
   localStorage.setItem('bk_streak',JSON.stringify(streak));
   renderStreak();
-  if(md.vix) render();
+  if(md.vix)render();
 }
-function clearS() {
-  streak=[]; beThisWeek=0;
+function clearS(){
+  streak=[];beThisWeek=0;
   localStorage.setItem('bk_streak','[]');
   localStorage.setItem('bk_be_week','0');
   renderStreak();
-  if(md.vix) render();
+  if(md.vix)render();
 }
-function getStreakLevel() {
-  if(streak.length<2) return 'ok';
-  const l2=streak.slice(-2), l3=streak.slice(-3);
+function getStreakLevel(){
+  if(streak.length<2)return 'ok';
+  const l2=streak.slice(-2),l3=streak.slice(-3);
   const nw=a=>a.filter(t=>t!=='W').length;
   const ls=a=>a.filter(t=>t==='L').length;
-  if(ls(l2)>=1) return 'stop';
-  if(l3.length===3&&nw(l3)>=3) return 'stop';
-  if(l2.length===2&&nw(l2)>=2) return 'half';
+  if(ls(l2)>=1)return 'stop';
+  if(l3.length===3&&nw(l3)>=3)return 'stop';
+  if(l2.length===2&&nw(l2)>=2)return 'half';
   return 'ok';
 }
-function renderStreak() {
+function renderStreak(){
   const c=el('spills');
   el('be-count').textContent=`${beThisWeek} BE${beThisWeek!==1?'s':''} this week`;
   if(!streak.length){c.innerHTML='<span style="font-size:11px;color:var(--t4);font-style:italic">Nothing logged yet</span>';el('skalert').className='skalert';return;}
   c.innerHTML=streak.map(t=>`<span class="spill ${t}">${t==='W'?'WIN':t==='L'?'LOSS':'BE'}</span>`).join('');
   const lv=getStreakLevel();
-  const msgs={stop:'FULL STOP — loss or 3 consecutive non-wins. Do not take next trade. Re-evaluate conditions first.',half:'CUT TO HALF SIZE — 2 break evens in a row. Signal weakening. Monitor closely.',ok:streak.length>=3?'Streak clean — maintain sizing per market conditions.':''};
+  const msgs={stop:'FULL STOP — loss or 3 consecutive non-wins. Do not take next trade.',half:'CUT TO HALF SIZE — 2 break evens in a row. Signal weakening.',ok:streak.length>=3?'Streak clean — maintain sizing per market conditions.':''};
   const a=el('skalert');
   a.textContent=msgs[lv]||'';
   a.className=`skalert ${lv==='ok'&&streak.length<3?'':lv}`;
 }
-
-// ── TRADES ─────────────────────────────────────────
-function addT() {
+function addT(){
   const tick=el('t-tick').value.trim().toUpperCase();
   const date=el('t-date').value;
-  if(!tick||!date) return;
+  if(!tick||!date)return;
   trades.push({tick,date,id:Date.now()});
   localStorage.setItem('bk_trades',JSON.stringify(trades));
   el('t-tick').value='';
   renderTrades();
 }
-function rmT(id) {
+function rmT(id){
   trades=trades.filter(t=>t.id!==id);
   localStorage.setItem('bk_trades',JSON.stringify(trades));
   renderTrades();
 }
-function renderTrades() {
+function renderTrades(){
   const c=el('trades-list');
   if(!trades.length){c.innerHTML='<div class="empty">No open trades</div>';return;}
   const today=new Date();
@@ -405,17 +340,13 @@ function renderTrades() {
     return `<div class="trade-row"><div class="tr-tick">${t.tick}</div><div class="tr-days ${cls}">${lbl}</div><div class="tr-rm" onclick="rmT(${t.id})">×</div></div>`;
   }).join('');
 }
-
-// ── UTILS ──────────────────────────────────────────
 function el(id){return document.getElementById(id)}
 function set(id,prop,val){el(id)[prop]=val}
-
-// ── INIT ───────────────────────────────────────────
 renderStreak();
 renderTrades();
 el('t-date').valueAsDate=new Date();
 load();
-setInterval(load, 5*60*1000);
+setInterval(load,5*60*1000);
 </script>
 </body>
 </html>
